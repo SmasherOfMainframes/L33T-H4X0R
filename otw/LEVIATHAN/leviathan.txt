@@ -1,0 +1,12 @@
+LEVIATHAN 0 : leviathan0
+the password is just in the bookmakrsk.html file, if you open the file in a web browser and ctrl-f for password, you can click the link and you'll get the password
+
+LEVIATHAN 1: rioGegei8m
+if you cat check, you will notice at the top the words "love sex secret god"
+if you google this, you'll find that it is a reference to the movie hackers.
+there is a quote in the movie that says “The Four Most-Used Passwords Are Love, Sex, Secret, and God”
+sex is the password.
+once youre in, you enter sh as leviathan2. cat the contents of /etc/leviathan_pass/leviathan2
+
+LEVIATHAN 2: ougahZi8Ta
+

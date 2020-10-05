@@ -1,0 +1,51 @@
+NATAS 0: natas0
+view page source to find the password
+
+NATAS 1: gtVrDuiDfck831PqWsLEZy5gyDz1clto
+same thing ?
+the challenge didnt seem to work, i was able to right click but to solve without right clicking you 
+could just enter view-source:url to get to the page source
+
+NATAS 2: ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi
+if you click on the href for pixel.png, you'll notice the full file path is blahblah/files/pixel.png
+so browse /files/ and you'll see the password
+
+NATAS 3: sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14
+/robots.txt
+
+NATAS 4: Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
+go to natas 5. Access will be denied. Add HTML to the page in element inspector, add and anchro tag
+with href to natas 4. access will be granted.
+
+NATAS 5: iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
+in inspect element, go to storage, cookies, and click on the only field
+there should be a row with the name "loggedin"
+just change the value from 0 to 1 lmao
+
+NATAS 6: aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1
+view source code
+notice include includes/secret.inc
+go there and view source, you find the secret
+enter the secret and you get the password
+
+NATAS 7: 7z3hEENjQtflzgnT29q7wAvMNfZdh0i9
+http://natas7.natas.labs.overthewire.org/index.php?page=/etc/natas_webpass/natas8
+
+NATAS 8: DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe 
+<?php
+$FUCK = "3d3d516343746d4d6d6c315669563362";
+$FUCK2 = hex2bin($FUCK);
+$FUCK3 = strrev($FUCK2);
+$FUCK4 = base64_decode($FUCK3);
+echo $FUCK. "\n";
+echo $FUCK2. "\n";
+echo $FUCK3. "\n";
+echo $FUCK4. "\n";
+
+paste this shit in https://sandbox.onlinephpfunctions.com/
+
+NATAS 9: W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl
+php injection
+asdasd dictionary.txt; cat /etc/natas_webpass/natas10; echo
+
+NATAS 10: nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu

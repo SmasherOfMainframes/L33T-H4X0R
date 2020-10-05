@@ -1,0 +1,188 @@
+ssh banditN@bandit.labs.overthewire.org -p 2220
+/tmp/DarthSmegma6969/
+
+BANDIT 0: bandit0
+cat readme
+
+BANDIT 1: boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+cat ./-
+
+BANDIT 2: CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+cat spaces\ in\ this\ filename
+
+BANDIT 3: UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+cat inhere/.hidden
+
+BANDIT 4: pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+awk 1 cat./*
+
+BANDIT 5: koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+find . -size 1033c -type f -exec cat {} \;
+
+BANDIT 6: DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+# Get to root
+cd ../../../../../..
+# Find
+find . -size 33c -user bandit7 -group bandit6 -exec cat {} \;
+
+BANDIT 7: HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+grep 'millionth' data.txt
+
+BANDIT 8: cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+sort data.txt | uniq -c
+
+BANDIT 9: UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+strings data.txt | grep '==='
+
+BANDIT 10: truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+base64 -d data.txt
+
+BANDIT 11: IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+cat data.txt | tr '[A-Za-z]' '[N-ZA-Mn-za-m]'
+
+BANDIT 12: 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+# aaahhhhHHHHHHHHHHHHHHHH
+# you just gotta xxd the hexdump, then just decompress the fuck out of the file
+# that has been compressed multiple times with bzip2, gzip and tar
+
+BADNIT 13: 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+# use scp to transfer the private key to local machine, then use private key to log in
+scp -P 2220 bandit13@bandit.labs.overthewire.org:/home/bandit13/sshkey.private sshkey_bandit14.private
+ssh -i sshkey_bandit14.private bandit14@bandit.labs.overthewire.org -p 2220
+
+# OR just do
+ssh -i sshkey.private bandit14@localhost
+
+BANDIT 14: 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+telnet localhost 30000
+
+BANDIT 15: BfMYroe26WYalil77FoDi9qh59eK5xNr
+openssl s_client -connect localhost:30001
+
+BANDIT 16: cluFn7wTiGryunymYOu4RcffSxQluehd
+Starting Nmap 7.40 ( https://nmap.org ) at 2020-07-05 23:41 CEST
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00045s latency).
+Not shown: 996 closed ports
+PORT      STATE SERVICE
+31046/tcp open  unknown
+31518/tcp open  unknown
+31691/tcp open  unknown
+31790/tcp open  unknown <- this one
+31960/tcp open  unknown
+
+# then 
+openssl s_client -connect localhost:31790
+# and submit the current password
+
+BANIDT 17: xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
+diff passwords.new passwords.old
+
+BANDIT 18: kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+#basrc autologs you out so just scp that shit
+scp -P 2220 bandit18@bandit.labs.overthewire.org:/home/bandit18/readme bandit19_password.txt
+
+BANDIT 19: IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+./bandit20-do cat /etc/bandit_pass/bandit20
+
+BANDIT 20: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+# TOUGH
+# in terminal one, set up nc to listen to whatever port. feed it the password
+cat /etc/bandit_pass/bandit20 | nc -l -p 5555
+# in terminal two, run 
+./suconnect 5555
+# password for bandit21 should be in terminal 1
+
+BANDIT 21: gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+# First, go to /etc/cron.d and cat all the files to see what theyre doing
+# notice all of them are running shell scripts located in /usr/bin following
+# the name cronjob_*
+# Head over there and try to read what the shell scripts are doing. cronjob_bandit22.sh sounds interesting.
+# read the contents of cronjob_bandit22.sh and you'll see /etc/bandit_pass/bandit22 is being written to 
+# /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv 
+# open that file and you shall find the password for bandit 22
+
+
+BANDIT 22: Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+# GOOD CHALLENGE
+# go to /etc/cron.d and read out what the cronjobs are doing. All executing shell scripts at /usr/bin
+# go to /usr/bin and read out everything cronjob_bandit*
+# notice what cronjob_bandit23.sh is doing...
+
+#!/bin/bash
+                                                                                              
+myname=$(whoami)       
+
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)                                      
+                                                                                                     
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+                                                                                                      
+cat /etc/bandit_pass/$myname > /tmp/$mytarget
+
+# so if we replace myname with bandit23 instead of bandit22, the script should echo
+# the folder in /tmp/ where the password is being stored.
+# cat that file and theres the password
+
+BANDIT 23: jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+# GOOD ONE
+# the cronjob running for bandit24 is executing all scripts in /var/spool/bandit24
+# so all we have to do is put one of our scripts in there to execute. If we first
+# set up a tcp connection 
+nc -l -p 54321
+# then using this simple script
+
+#!/bin/bash
+cat /etc/bandit_pass/bandit24 | nc localhost 54321
+
+# and move it into /var/spool/bandit24, then when it executes (once every minute) it will print
+# out the password for bandit24 on the first tcp screen.
+
+BANDIT 24: UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+#!/bin/bash
+
+for i in $(seq -w 0 9999);
+do
+echo UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ $i
+done | nc localhost 30002
+
+BANDIT 25: uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+# shrink console super small to invoke MORE
+# press v to enter vim
+# enter command mode, :set shell=/bin/bash
+# get password from normal place
+
+BANDIT 26: 5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+# same as before, but run bandit27 and then get password
+
+BANDIT 27: 3ba3118a22e93127a4ed485be72ef5ea
+git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+# read the readme
+
+BANDIT 28: 0ef186ac70e04ea33b4c1853d2526fa2
+# go through the past commits to find version that had password in plain text
+git log -p
+
+BANDIT 29: bbc96594b4e001778eee9975372716b2
+# look through different branches, there is an update in the origin/dev branch containing password
+git checkout origin/dev
+
+BANDIT 30: 5b90576bedb2cc04c86a9e924ce42faf
+git tag
+git show secret
+
+BANDIT 31: 47e603bb428404d265f59c42920d81e5
+# just follow the instructions in the readme
+
+BANDIT 32: 56a9bf19c63d650ce78e6ec0354ee45e
+# use
+$0
+# to restart interactive shell? idk
+# then
+/bin/bash
+# to enter bash shell as bandit23 and you know the rest
+
+BANDIT 33: c9c3199ddf4121b10cf581a98d51caee
+
+
+
+
