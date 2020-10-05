@@ -9,4 +9,42 @@ sex is the password.
 once youre in, you enter sh as leviathan2. cat the contents of /etc/leviathan_pass/leviathan2
 
 LEVIATHAN 2: ougahZi8Ta
+create a temp directory, 
+run : ltrace ./printfile /tmp/darthsmegma/a
 
+notice that the program checks access for "/tmp/darthsmegma/a"
+then it calls system(%s)
+
+modify directory so that it contains:
+/tmp/darthsmegma/a etc/leviathan_pass/leviathan3
+
+now, we can cd to /
+then run home/leviathan2/printfile "/tmp/darthsmegma/a etc/leviathan_pass/leviathan3"
+
+when we do this, the program checks for access of the full string above, which checks out fine since user leviathan2 created that file. But, cat works differently. It will instead run 
+cat /tmp/darthsmegma/a
+cat etc/leviathan_pass/leviathan3
+
+which will give us the password
+
+LEVIATHAN 3: Ahdiemoo1j
+run ltrace ./level3
+enter anything, then notice there is a strcmp(whatever you entered, "snlprintf\n")
+this tells us the first password is snlprintf
+run ./level3 again and enter the pass word
+we enter sh
+run id
+notice we are now uid=12004, leviathan4
+cat /etc/leviathan_pass/leviathan4
+
+LEVIATHAN 4: vuH0coox6m
+run the program in .trash
+convert binary to text
+done
+
+LEVIATHAN 5: Tith4cokei
+running ltrace ./leviathan5 shows that the program just prints out the contents of /tmp/file.log
+create a symlink from /tmp/file.log to /etc/leviathan_pass/leviathan6 
+then run ./leviathan5
+
+LEVIATHAN 6: UgaoFee4li
