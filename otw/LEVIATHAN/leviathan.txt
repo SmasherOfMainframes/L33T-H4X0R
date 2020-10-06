@@ -48,3 +48,7 @@ create a symlink from /tmp/file.log to /etc/leviathan_pass/leviathan6
 then run ./leviathan5
 
 LEVIATHAN 6: UgaoFee4li
+brute force with a quad for loop
+correct pin is 7123
+
+LEVIATHAN 7: ahy7MaeBo9
