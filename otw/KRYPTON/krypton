@@ -1,0 +1,30 @@
+KRYPTON 1: KRYPTONISGREAT
+just throw the contents of krypton2 into a rot13 decoder
+
+KRYPTON 2: ROTTEN
+Create a test file containing ABCD
+run the ecrypt program on it, 
+notice the output is MNOP
+the letters were shifted by 12
+Therefor, they are encrypted by ROT12 and 
+	decrypted by ROT(26-12) = ROT14
+
+running ROT14 on the contents of krypton3 gives
+CAESARISEASY
+
+KRYPTON 3 : CAESARISEASY
+To find the substitution method used, 
+copy the contents of found 1-3 and paste into a Monoalphabetic 
+substitution decoder, which will analyze the frequency of the 
+letters and create a substitution alphabet
+
+then use that alphabet on krypton4
+WELLD ONETH ELEVE LFOUR PASSW ORDIS BRUTE
+
+KRYPTON 4: BRUTE
+key is FREKEY
+
+KRYPTON 5: CLEARTEXT
+
+KRYPTON 6: RANDOM
+
